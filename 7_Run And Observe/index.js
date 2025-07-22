@@ -1,16 +1,18 @@
 const fs = require("fs");
 console.log("Fist running code");
+const fileName = "dhirendra.txt"
+
 
 // Synchronization operation
 console.log("Second synchronization code run");
 
-const readSyc = fs.writeFileSync("dhirendra.txt", "Hello dhirendra", "utf8");
+fs.writeFileSync("dhirendra.txt", "Hello dhirendra", "utf8");
 console.log("Third synchronization code run");
 
 // Asynchronization code
 
 console.log("Fourth Asynchronization code run");
-const readAsy = fs.writeFile("dhiraj.txt", "Hello dhiraj", "utf8", (error,dataAsy) => {
+fs.writeFile("dhirendra.txt", "Hello dhirendra", "utf8", (error) => {
     if(error) {
         console.log("Some Error Data Run"); 
     } else {
