@@ -6,6 +6,8 @@ const contactRoute = express.Router();
 const rootdir = require("../util/utilPath");
 
 contactRoute.get("/contact-data", (req,res,next) => {
+    
+    
     res.sendFile(path.join(rootdir, "views", "contact-data.html"));
 
 });

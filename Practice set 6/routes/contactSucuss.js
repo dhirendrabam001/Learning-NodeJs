@@ -5,6 +5,9 @@ const path = require("path");
 const rootdir = require("../util/utilPath");
 
 contactSucuss.post("/contact-data", (req,res,next) => {
+    console.log("hello world");
+        
+        console.log(req.body);
     res.sendFile(path.join(rootdir, "views", "contact-sucuss.html"));
 });
 

@@ -2,7 +2,11 @@ const express = require("express");
 const homeRouter = require("./routes/homeRouter");
 const contactData = require("./routes/contactRouter");
 const contactSucuss = require("./routes/contactSucuss");
+const path = require("path");
+const rootdir = require("./util/utilPath");
 const app =  express();
+
+
 
 app.use(express.urlencoded());
 
@@ -10,16 +14,9 @@ app.use(homeRouter);
 app.use(contactData);
 app.use(contactSucuss);
 
-
-
-
-app.post("/contact-data", (req,res,next) => {
-    const bodydata = req.body;
-    console.log(bodydata);
-    
+app.use((req,res,next) => {
+    res.sendFile(path.join(rootdir, "views", "error.html"))
 })
-
-
 
 
 const PORT = 2000;
